@@ -33,7 +33,7 @@ public class DbOperations {
             if(e.getMessage().contains("UserName"))
                 ToastMessage.showMessage(LoginActivity.getContext(),"Username already exists, Please try again");
 
-           // Log.d("DbError",e.getCause().toString());
+
         }
         return value;
     }

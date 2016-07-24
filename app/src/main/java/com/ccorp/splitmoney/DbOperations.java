@@ -31,7 +31,7 @@ public class DbOperations {
         catch (SQLException e){
             Log.d("DbError",e.getMessage());
             if(e.getMessage().contains("UserName"))
-                ToastMessage.showMessage(LoginActivity.getContext(),"Username already exists, Please try again");
+                ToastMessage.showMessage(LoginActivity.getContext(),"Username already exists, Please try to login again");
 
 
         }

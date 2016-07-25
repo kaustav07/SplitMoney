@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText password = (EditText) findViewById(R.id.password);
         long id = dbOperations.insertLogin(username.getText().toString(),password.getText().toString());
         if(id != 0) {
-            Toast.makeText(getApplicationContext(), "userid is" + id, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "UserId is" + id, Toast.LENGTH_SHORT).show();
         }
     }
 

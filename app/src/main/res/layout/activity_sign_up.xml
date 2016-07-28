@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/SignUp_bg2"
+
     tools:context="com.ccorp.splitmoney.SignUp_Activity">
 
     <android.support.design.widget.TextInputLayout

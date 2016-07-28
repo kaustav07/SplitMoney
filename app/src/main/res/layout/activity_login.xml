@@ -29,7 +29,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:fontFamily="sans-serif"
-        android:textColor="#d04184a3" />
+        android:textColor="#d04184a3"
+        />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout

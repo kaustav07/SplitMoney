@@ -16,4 +16,6 @@
     <string name="usernameWrapper">Username</string>
     <string name="SignButton">Sign In</string>
     <string name="SignupButton">Sign Up</string>
+    <string name="validation_name">Please Write Something</string>
+    <string name="validation_participants">Minimum length should be 3</string>
 </resources>

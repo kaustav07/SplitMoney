@@ -115,16 +115,17 @@
             android:fontFamily="sans-serif"
             android:textColor="#d04184a3" />
 
-
-        <Button android:id="@+id/btn_signup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/SignupButton"
-            android:background="@android:color/holo_blue_dark"
-            android:layout_marginTop="40dp"
-            android:textColor="@android:color/white"/>
-
     </android.support.design.widget.TextInputLayout>
+
+    <Button android:id="@+id/btn_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/SignupButton"
+        android:background="@color/buttonColor"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/confirmPasswordWrapper"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

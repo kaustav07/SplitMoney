@@ -120,7 +120,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/SignupButton"
-            android:background="@android:color/holo_blue_dark"
+            android:background="@color/buttonColor"
             android:layout_marginTop="40dp"
             android:textColor="@android:color/white"/>
 

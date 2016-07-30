@@ -16,7 +16,7 @@
         android:id="@+id/fullNameWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="95dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
@@ -37,7 +37,7 @@
         android:id="@+id/emailWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="165dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
@@ -58,7 +58,7 @@
         android:id="@+id/phoneWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="235dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
@@ -79,7 +79,7 @@
         android:id="@+id/passwordWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="305dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
@@ -100,7 +100,7 @@
         android:id="@+id/confirmPasswordWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="375dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
@@ -115,7 +115,9 @@
             android:fontFamily="sans-serif"
             android:textColor="#d04184a3" />
 
+
     </android.support.design.widget.TextInputLayout>
+
 
     <Button android:id="@+id/btn_signup"
         android:layout_width="match_parent"
@@ -123,9 +125,8 @@
         android:text="@string/SignupButton"
         android:background="@color/buttonColor"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/confirmPasswordWrapper"
-        android:layout_marginTop="31dp"
-        android:layout_alignParentStart="true" />
 
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

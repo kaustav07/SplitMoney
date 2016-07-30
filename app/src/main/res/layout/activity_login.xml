@@ -61,7 +61,7 @@
         android:onClick="SigninButton"
         android:layout_marginStart="62dp"
         android:layout_marginTop="44dp"
-        android:background="@color/accent_material_light"
+        android:background="@android:color/holo_blue_dark"
         android:layout_below="@+id/passwordWrapper"
         android:layout_alignParentStart="true"
         style="@style/Widget.AppCompat.Button.Borderless" />
@@ -72,7 +72,7 @@
         android:text="@string/SignupButton"
         android:id="@+id/SignoutButton"
         android:onClick="SignupButton_click"
-        android:background="@color/accent_material_light"
+        android:background="@android:color/holo_blue_dark"
         android:layout_alignTop="@+id/SignButton"
         android:layout_toEndOf="@+id/SignButton"
         android:layout_marginStart="52dp"

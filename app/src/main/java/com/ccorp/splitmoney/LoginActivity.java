@@ -11,20 +11,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
-
-import eu.inmite.android.lib.validations.form.FormValidator;
-import eu.inmite.android.lib.validations.form.annotations.MinLength;
-import eu.inmite.android.lib.validations.form.annotations.NotEmpty;
-import eu.inmite.android.lib.validations.form.callback.SimpleErrorPopupCallback;
-
 public class LoginActivity extends AppCompatActivity {
 
 
 
-    private static Context applicationContext;
+    private static Context loginContext;
     ImageView imageview;
 
 
@@ -36,12 +27,12 @@ public class LoginActivity extends AppCompatActivity {
         final TextInputLayout passwordWrapper = (TextInputLayout) findViewById(R.id.passwordWrapper);
         usernameWrapper.setHint("UserName");
         passwordWrapper.setHint("Password");
-        applicationContext = getApplicationContext();
+        loginContext = getApplicationContext();
 
     }
 
     public static Context getContext() {
-        return applicationContext;
+        return loginContext;
     }
 
     public void SignupButton_click(View v) {

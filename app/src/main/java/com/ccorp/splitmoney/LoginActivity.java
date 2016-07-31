@@ -10,10 +10,15 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity {
 
-
+    @BindView(R.id.usernameWrapper)  TextInputLayout usernameWrapper;
+    @BindView(R.id.passwordWrapper)  TextInputLayout passwordWrapper;
+    @BindView(R.id.username) EditText inputUsername;
+    @BindView(R.id.password) EditText inputPassword;
 
     private static Context loginContext;
     ImageView imageview;
@@ -23,11 +28,14 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        final TextInputLayout usernameWrapper = (TextInputLayout) findViewById(R.id.usernameWrapper);
-        final TextInputLayout passwordWrapper = (TextInputLayout) findViewById(R.id.passwordWrapper);
+        ButterKnife.bind(this);
+        loginContext = getApplicationContext();
         usernameWrapper.setHint("UserName");
         passwordWrapper.setHint("Password");
-        loginContext = getApplicationContext();
+
+        inputUsername.addTextChangedListener(new SignUpValidation(inputUsername, this));
+        inputPassword.addTextChangedListener(new SignUpValidation(inputPassword,this));
+
 
     }
 

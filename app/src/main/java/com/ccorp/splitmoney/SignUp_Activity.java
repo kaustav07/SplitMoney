@@ -40,7 +40,9 @@ public class SignUp_Activity extends AppCompatActivity {
         confirmPasswordWrapper.setHint("Confirm Password");
         inputName.addTextChangedListener(new SignUpValidation(inputName,this));
         inputEmail.addTextChangedListener(new SignUpValidation(inputEmail,this));
+        inputPhone.addTextChangedListener(new SignUpValidation(inputPhone,this));
         inputPassword.addTextChangedListener(new SignUpValidation(inputPassword,this));
+        inputConfirmPassword.addTextChangedListener(new SignUpValidation(inputConfirmPassword,this));
 
     }
     public static Context getContext() {

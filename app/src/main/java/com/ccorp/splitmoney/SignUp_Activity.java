@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.EditText;
 
@@ -33,6 +37,7 @@ public class SignUp_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        setupWindowAnimations();
         ButterKnife.bind(this);
         signupContext = getApplicationContext();
         fullNameWrapper.setHint("Full Name");
@@ -48,6 +53,11 @@ public class SignUp_Activity extends AppCompatActivity {
         inputPassword.addTextChangedListener(new SignUpValidation(inputPassword,this));
         inputConfirmPassword.addTextChangedListener(new SignUpValidation(inputConfirmPassword,this));
 
+    }
+
+    private void setupWindowAnimations() {
+        Transition fade = TransitionInflater.from(this).inflateTransition(R.transition.fade_in);
+        getWindow().setEnterTransition(fade);
     }
     public static Context getContext() {
         return signupContext;

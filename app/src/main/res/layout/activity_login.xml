@@ -50,7 +50,8 @@
         android:layout_below="@+id/username"
         android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif"
-        android:textColor="#d04184a3" />
+        android:textColor="#d04184a3"
+        />
     </android.support.design.widget.TextInputLayout>
 
     <Button
@@ -59,13 +60,13 @@
         android:text="@string/SignButton"
         android:id="@+id/SignButton"
         android:onClick="SigninButton"
-        android:layout_marginStart="62dp"
-        android:layout_marginTop="44dp"
-        android:background="@color/buttonColor"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/shape"
         android:textColor="@android:color/white"
+        style="@style/Base.TextAppearance.AppCompat.Body2"
         android:layout_below="@+id/passwordWrapper"
-        android:layout_alignParentStart="true"
-        style="@style/Widget.AppCompat.Button.Borderless" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -73,10 +74,10 @@
         android:text="@string/SignupButton"
         android:id="@+id/SignoutButton"
         android:onClick="SignupButton_click"
-        android:background="@color/buttonColor"
+        android:background="@drawable/shape"
         android:textColor="@android:color/white"
+        style="@style/Base.TextAppearance.AppCompat.Body2"
+        android:layout_marginEnd="34dp"
         android:layout_alignTop="@+id/SignButton"
-        android:layout_toEndOf="@+id/SignButton"
-        android:layout_marginStart="52dp"
-        style="@style/Base.TextAppearance.AppCompat.Body2" />
+        android:layout_alignEnd="@+id/passwordWrapper" />
 </RelativeLayout>

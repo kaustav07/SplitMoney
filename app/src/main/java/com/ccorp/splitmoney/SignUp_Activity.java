@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.EditText;
 
 import butterknife.BindView;
@@ -40,31 +41,13 @@ public class SignUp_Activity extends AppCompatActivity {
         inputName.addTextChangedListener(new SignUpValidation(inputName,this));
         inputEmail.addTextChangedListener(new SignUpValidation(inputEmail,this));
         inputPassword.addTextChangedListener(new SignUpValidation(inputPassword,this));
-        /*inputName.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (inputName.getText().toString().trim().isEmpty()) {
-                    fullNameWrapper.setError(LoginActivity.getContext().getString(R.string.error_msg_name));
-                } else {
-                    fullNameWrapper.setErrorEnabled(false);
-                }
-            }
-        });*/
 
     }
     public static Context getContext() {
         return signupContext;
     }
+
+
 
 
 }

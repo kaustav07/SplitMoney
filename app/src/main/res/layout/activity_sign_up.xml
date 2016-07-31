@@ -123,10 +123,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/SignupButton"
-        android:background="@color/buttonColor"
+        android:background="@drawable/shape"
         android:textColor="@android:color/white"
-
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        />
 
 </RelativeLayout>

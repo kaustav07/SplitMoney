@@ -16,7 +16,6 @@ import butterknife.ButterKnife;
  * Created by Kaustav on 7/30/2016.
  */
 public class SignUpValidation implements TextWatcher{
-/*
 
     @BindView(R.id.fullName) EditText inputName;
     @BindView(R.id.Email) EditText inputEmail;
@@ -28,22 +27,15 @@ public class SignUpValidation implements TextWatcher{
     @BindView(R.id.phoneWrapper) TextInputLayout phoneWrapper;
     @BindView(R.id.passwordWrapper) TextInputLayout passwordWrapper;
     @BindView(R.id.confirmPasswordWrapper) TextInputLayout confirmPasswordWrapper;
-*/
 
 
     private View view;
     Activity activity;
-    TextInputLayout fullNameWrapper;
-    TextInputLayout emailWrapper;
-    TextInputLayout passwordWrapper;
 
     SignUpValidation(View view,Activity _activity) {
         this.view = view;
         this.activity = _activity;
-       // ButterKnife.bind(this.activity);
-         fullNameWrapper = (TextInputLayout) this.activity.findViewById(R.id.fullNameWrapper);
-         emailWrapper = (TextInputLayout) this.activity.findViewById(R.id.emailWrapper);
-         passwordWrapper = (TextInputLayout) this.activity.findViewById(R.id.passwordWrapper);
+        ButterKnife.bind(this,this.activity);
     }
 
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

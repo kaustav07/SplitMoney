@@ -18,17 +18,18 @@ import butterknife.ButterKnife;
 public class SignUpValidation implements TextWatcher{
 
     @BindView(R.id.fullName) EditText inputName;
+    @BindView(R.id.username) EditText inputUsername;
     @BindView(R.id.Email) EditText inputEmail;
     @BindView(R.id.password) EditText inputPassword;
     @BindView(R.id.phone) EditText inputPhone;
-    @BindView(R.id.username) EditText inputUsername;
     @BindView(R.id.confirmPassword) EditText inputConfirmPassword;
     @BindView(R.id.fullNameWrapper) TextInputLayout fullNameWrapper;
+    @BindView(R.id.usernameWrapper) TextInputLayout usernameWrapper;
     @BindView(R.id.emailWrapper) TextInputLayout emailWrapper;
     @BindView(R.id.phoneWrapper) TextInputLayout phoneWrapper;
     @BindView(R.id.passwordWrapper) TextInputLayout passwordWrapper;
     @BindView(R.id.confirmPasswordWrapper) TextInputLayout confirmPasswordWrapper;
-    @Bindview(R.id.usernameWrapper) TextInputLayout usernameWrapper;
+
 
 
     private View view;
@@ -51,6 +52,9 @@ public class SignUpValidation implements TextWatcher{
             case R.id.fullName:
                 validateName((EditText)view);
                 break;
+            case R.id.username:
+                validateUsername((EditText)view);
+                break;
             case R.id.Email:
                 validateEmail((EditText)view);
                 break;
@@ -62,9 +66,7 @@ public class SignUpValidation implements TextWatcher{
             case R.id.confirmPassword:
                 validateConfirmPassword((EditText)view);
                 break;
-            case R.id.username:
-                validateUsername((EditText)view);
-                break;
+
         }
     }
 
@@ -75,6 +77,20 @@ public class SignUpValidation implements TextWatcher{
             return false;
         } else {
             fullNameWrapper.setErrorEnabled(false);
+        }
+
+        return true;
+    }
+
+    private boolean validateUsername(EditText inputUsername) {
+        String username = inputUsername.getText().toString().trim();
+
+        if (username.isEmpty() || !isValidUsername(username)) {
+            usernameWrapper.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
+            requestFocus(inputUsername);
+            return false;
+        } else {
+            usernameWrapper.setErrorEnabled(false);
         }
 
         return true;
@@ -93,18 +109,7 @@ public class SignUpValidation implements TextWatcher{
 
         return true;    }
 
-    private boolean validateUsername(EditText inputUsername) {
-        String username = inputUsername.getText().toString().trim();
 
-        if (username.isEmpty() || !isValidUsername(username)) {
-            usernameWrapper.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
-            requestFocus(inputUsername);
-            return false;
-        } else {
-            usernameWrapper.setErrorEnabled(false);
-        }
-
-        return true;    }
 
 
     private boolean validatePhone(EditText inputPhone) {
@@ -148,6 +153,10 @@ public class SignUpValidation implements TextWatcher{
         return true;
     }
 
+    private static boolean isValidUsername(String username) {
+        return !TextUtils.isEmpty(username) ;
+    }
+
     private static boolean isValidEmail(String email) {
         return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
@@ -156,9 +165,7 @@ public class SignUpValidation implements TextWatcher{
         return !TextUtils.isEmpty(phone) && android.util.Patterns.PHONE.matcher(phone).matches();
     }
 
-    private static boolean isValidUsername(String username) {
-        return !TextUtils.isEmpty(username) ;
-    }
+
 
     private void requestFocus(View view) {
         if (view.requestFocus()) {

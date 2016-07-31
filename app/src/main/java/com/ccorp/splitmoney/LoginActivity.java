@@ -33,8 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         usernameWrapper.setHint("UserName");
         passwordWrapper.setHint("Password");
 
-        inputUsername.addTextChangedListener(new SignUpValidation(inputUsername, this));
-        inputPassword.addTextChangedListener(new SignUpValidation(inputPassword,this));
+        inputUsername.addTextChangedListener(new LoginValidation(inputUsername, this));
+        inputPassword.addTextChangedListener(new LoginValidation(inputPassword,this));
 
 
     }

@@ -34,7 +34,8 @@
                 android:ems="10"
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName|textCapWords"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_user" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -54,7 +55,8 @@
                 android:ems="10"
                 android:fontFamily="sans-serif"
                 android:inputType="textEmailAddress"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_user" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -74,7 +76,8 @@
                 android:ems="10"
                 android:fontFamily="sans-serif"
                 android:inputType="textEmailAddress|textAutoComplete"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_gmail" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -95,7 +98,8 @@
                 android:ems="10"
                 android:fontFamily="sans-serif"
                 android:inputType="phone"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_phone_start" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -116,7 +120,8 @@
                 android:ems="10"
                 android:fontFamily="sans-serif"
                 android:inputType="text|textPassword"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_key" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -137,7 +142,8 @@
                 android:ems="10"
                 android:fontFamily="sans-serif"
                 android:inputType="text|textPassword"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_key" />
 
 
         </android.support.design.widget.TextInputLayout>

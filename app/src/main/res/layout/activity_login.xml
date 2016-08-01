@@ -30,6 +30,7 @@
         android:layout_marginRight="20dp"
         android:fontFamily="sans-serif"
         android:textColor="#d04184a3"
+        android:drawableLeft="@drawable/ic_action_user" />
         />
     </android.support.design.widget.TextInputLayout>
 
@@ -51,6 +52,7 @@
         android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif"
         android:textColor="#d04184a3"
+        android:drawableLeft="@drawable/ic_action_key"
         />
     </android.support.design.widget.TextInputLayout>
 

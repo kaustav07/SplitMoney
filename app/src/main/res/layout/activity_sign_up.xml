@@ -17,97 +17,60 @@
 
         tools:context="com.ccorp.splitmoney.SignUp_Activity">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/fullNameWrapper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="95dp">
-
-            <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/fullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="40dp"
                 android:ems="10"
+                android:hint="fullname"
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName|textCapWords"
                 android:textColor="#d04184a3" />
-        </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/usernameWrapper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/fullNameWrapper"
-            android:layout_marginTop="30dp">
 
-            <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="110dp"
                 android:ems="10"
+                android:hint="username"
                 android:fontFamily="sans-serif"
                 android:inputType="textEmailAddress"
                 android:textColor="#d04184a3" />
-        </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/emailWrapper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="165dp">
-
-            <EditText
+            <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="180dp"
                 android:ems="10"
+                android:hint="Email"
                 android:fontFamily="sans-serif"
                 android:inputType="textEmailAddress|textAutoComplete"
                 android:textColor="#d04184a3" />
 
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/phoneWrapper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="235dp">
-
-            <EditText
+            <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="250dp"
                 android:ems="10"
+                android:hint="Phone"
                 android:fontFamily="sans-serif"
                 android:inputType="phone"
                 android:textColor="#d04184a3" />
 
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/passwordWrapper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="305dp">
-
-            <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -116,31 +79,24 @@
                 android:ems="10"
                 android:fontFamily="sans-serif"
                 android:inputType="text|textPassword"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:hint="Password"
+                android:layout_marginTop="320dp" />
 
-        </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/confirmPasswordWrapper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="375dp">
 
-            <EditText
+        <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/confirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="390dp"
                 android:ems="10"
+                android:hint="Confirm Password"
                 android:fontFamily="sans-serif"
                 android:inputType="text|textPassword"
                 android:textColor="#d04184a3" />
-
-
-        </android.support.design.widget.TextInputLayout>
 
 
         <Button
@@ -150,7 +106,7 @@
             android:background="@drawable/shape"
             android:text="@string/SignupButton"
             android:textColor="@android:color/white"
-            android:layout_below="@+id/confirmPasswordWrapper"
+            android:layout_below="@+id/confirmPassword"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="51dp" />
 

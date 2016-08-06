@@ -23,12 +23,12 @@ public class SignUpValidation implements TextWatcher{
     @BindView(R.id.password) EditText inputPassword;
     @BindView(R.id.phone) EditText inputPhone;
     @BindView(R.id.confirmPassword) EditText inputConfirmPassword;
-    @BindView(R.id.fullNameWrapper) TextInputLayout fullNameWrapper;
-    @BindView(R.id.usernameWrapper) TextInputLayout usernameWrapper;
-    @BindView(R.id.emailWrapper) TextInputLayout emailWrapper;
-    @BindView(R.id.phoneWrapper) TextInputLayout phoneWrapper;
-    @BindView(R.id.passwordWrapper) TextInputLayout passwordWrapper;
-    @BindView(R.id.confirmPasswordWrapper) TextInputLayout confirmPasswordWrapper;
+   /* @BindView(R.id.fullNameWrapper) TextInputLayout fullNameWrapper;*/
+//    @BindView(R.id.usernameWrapper) TextInputLayout usernameWrapper;
+   /* @BindView(R.id.emailWrapper) TextInputLayout emailWrapper;
+    @BindView(R.id.phoneWrapper) TextInputLayout phoneWrapper;*/
+//    @BindView(R.id.passwordWrapper) TextInputLayout passwordWrapper;
+//    @BindView(R.id.confirmPasswordWrapper) TextInputLayout confirmPasswordWrapper;
 
 
 
@@ -50,61 +50,55 @@ public class SignUpValidation implements TextWatcher{
     public void afterTextChanged(Editable editable) {
         switch (view.getId()) {
             case R.id.fullName:
-                validateName((EditText)view);
+                validateName();
                 break;
             case R.id.username:
-                validateUsername((EditText)view);
+                validateUsername();
                 break;
             case R.id.Email:
-                validateEmail((EditText)view);
+                validateEmail();
                 break;
             case R.id.phone:
-                validatePhone((EditText)view);
+                validatePhone();
             case R.id.password:
-                validatePassword((EditText)view);
+                validatePassword();
                 break;
             case R.id.confirmPassword:
-                validateConfirmPassword((EditText)view);
+                validateConfirmPassword();
                 break;
 
         }
     }
 
-    private boolean validateName(EditText inputName) {
+    private boolean validateName() {
         if (inputName.getText().toString().trim().isEmpty()) {
-            fullNameWrapper.setError(LoginActivity.getContext().getString(R.string.error_msg_name));
+            inputName.setError(LoginActivity.getContext().getString(R.string.error_msg_name));
             requestFocus(inputName);
             return false;
-        } else {
-            fullNameWrapper.setErrorEnabled(false);
         }
 
         return true;
     }
 
-    private boolean validateUsername(EditText inputUsername) {
+    private boolean validateUsername() {
         String username = inputUsername.getText().toString().trim();
 
         if (username.isEmpty() || !isValidUsername(username)) {
-            usernameWrapper.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
+            inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
             requestFocus(inputUsername);
             return false;
-        } else {
-            usernameWrapper.setErrorEnabled(false);
         }
 
         return true;
     }
 
-    private boolean validateEmail(EditText inputEmail) {
+    private boolean validateEmail() {
         String email = inputEmail.getText().toString().trim();
 
         if (email.isEmpty() || !isValidEmail(email)) {
-            emailWrapper.setError(LoginActivity.getContext().getString(R.string.error_invalid_email));
+            inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_email));
             requestFocus(inputEmail);
             return false;
-        } else {
-            emailWrapper.setErrorEnabled(false);
         }
 
         return true;    }
@@ -112,43 +106,37 @@ public class SignUpValidation implements TextWatcher{
 
 
 
-    private boolean validatePhone(EditText inputPhone) {
+    private boolean validatePhone() {
         String phone = inputPhone.getText().toString().trim();
 
         if (phone.isEmpty() || !isValidPhone(phone)) {
-            phoneWrapper.setError(LoginActivity.getContext().getString(R.string.error_invalid_phone));
+            inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_phone));
             requestFocus(inputPhone);
             return false;
-        } else {
-            phoneWrapper.setErrorEnabled(false);
         }
 
         return true;    }
 
-    private boolean validatePassword(EditText inputPassword) {
+    private boolean validatePassword() {
         if (inputPassword.getText().toString().trim().isEmpty()) {
-            passwordWrapper.setError(LoginActivity.getContext().getString(R.string.error_invalid_password));
+            inputPassword.setError(LoginActivity.getContext().getString(R.string.error_invalid_password));
             requestFocus(inputPassword);
             return false;
         }
-        else {
-            passwordWrapper.setErrorEnabled(false);
-        }
+
 
         return true;
     }
 
-    private boolean validateConfirmPassword(EditText inputConfirmPassword) {
+    private boolean validateConfirmPassword() {
         String password = inputPassword.getText().toString().trim();
         String confirmPassword = inputConfirmPassword.getText().toString().trim();
         if (inputConfirmPassword.getText().toString().trim().isEmpty()|| (password != confirmPassword)) {
-            confirmPasswordWrapper.setError(LoginActivity.getContext().getString(R.string.error_incorrect_confirmPassword));
+            inputPassword.setError(LoginActivity.getContext().getString(R.string.error_incorrect_confirmPassword));
             requestFocus(inputConfirmPassword);
             return false;
         }
-        else {
-            confirmPasswordWrapper.setErrorEnabled(false);
-        }
+
 
         return true;
     }

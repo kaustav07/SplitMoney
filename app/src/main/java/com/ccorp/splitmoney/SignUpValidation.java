@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 
+import com.rengwuxian.materialedittext.MaterialEditText;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -17,12 +19,13 @@ import butterknife.ButterKnife;
  */
 public class SignUpValidation implements TextWatcher{
 
-    @BindView(R.id.fullName) EditText inputName;
-    @BindView(R.id.username) EditText inputUsername;
-    @BindView(R.id.Email) EditText inputEmail;
-    @BindView(R.id.password) EditText inputPassword;
-    @BindView(R.id.phone) EditText inputPhone;
-    @BindView(R.id.confirmPassword) EditText inputConfirmPassword;
+    @BindView(R.id.fullName)
+    MaterialEditText inputName;
+    @BindView(R.id.username) MaterialEditText inputUsername;
+    @BindView(R.id.Email) MaterialEditText inputEmail;
+    @BindView(R.id.password) MaterialEditText inputPassword;
+    @BindView(R.id.phone) MaterialEditText inputPhone;
+    @BindView(R.id.confirmPassword) MaterialEditText inputConfirmPassword;
    /* @BindView(R.id.fullNameWrapper) TextInputLayout fullNameWrapper;*/
 //    @BindView(R.id.usernameWrapper) TextInputLayout usernameWrapper;
    /* @BindView(R.id.emailWrapper) TextInputLayout emailWrapper;
@@ -72,9 +75,14 @@ public class SignUpValidation implements TextWatcher{
 
     private boolean validateName() {
         if (inputName.getText().toString().trim().isEmpty()) {
+            inputName.setErrorColor(R.color.errorColor);
             inputName.setError(LoginActivity.getContext().getString(R.string.error_msg_name));
             requestFocus(inputName);
             return false;
+        }
+        else if(inputName.getText().length()<3){
+            inputName.setErrorColor(R.color.errorColor);
+            inputName.setError("Min length should be 3");
         }
 
         return true;

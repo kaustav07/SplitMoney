@@ -20,8 +20,9 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
                 app:met_baseColor="#0056d3"
-                app:met_primaryColor="#982360"
-                app:met_errorColor="@color/errorColor"
+                app:met_primaryColor="#0056d3"
+                app:met_errorColor="#0056d3"
+                app:met_textColor="#0056d3"
                 android:id="@+id/fullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,8 +37,11 @@
                 android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
                 app:met_floatingLabelText="Full Name"
                 app:met_floatingLabelTextColor="#982360"
+                app:met_underlineColor="#0056d3"
                 app:met_minCharacters="3"
                 app:met_maxCharacters="20"
+                app:met_validateOnFocusLost="false"
+
                 app:met_helperText="Mainak Dutta"
                 app:met_helperTextColor="@color/hintColor"
                  />

@@ -41,6 +41,9 @@
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
+                app:met_baseColor="#0056d3"
+                app:met_primaryColor="#982360"
+                app:met_errorColor="#ddaa00"
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,9 +55,16 @@
                 android:fontFamily="sans-serif"
                 android:inputType="textEmailAddress"
                 android:textColor="#d04184a3"
-                android:drawableLeft="@drawable/ic_action_user" />
+                android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
+                app:met_floatingLabelText="Full Name"
+                app:met_floatingLabelTextColor="#982360"
+                app:met_minCharacters="3"
+                app:met_maxCharacters="20"/>
 
             <com.rengwuxian.materialedittext.MaterialEditText
+                app:met_baseColor="#0056d3"
+                app:met_primaryColor="#982360"
+                app:met_errorColor="#ddaa00"
                 android:id="@+id/Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,9 +76,16 @@
                 android:fontFamily="sans-serif"
                 android:inputType="textEmailAddress|textAutoComplete"
                 android:textColor="#d04184a3"
-                android:drawableLeft="@drawable/ic_action_gmail" />
+                android:drawableLeft="@drawable/ic_email_black_24dp"
+                app:met_floatingLabelText="Full Name"
+                app:met_floatingLabelTextColor="#982360"
+                app:met_minCharacters="6"
+                app:met_maxCharacters="20" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
+                app:met_baseColor="#0056d3"
+                app:met_primaryColor="#982360"
+                app:met_errorColor="#ddaa00"
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,9 +97,16 @@
                 android:fontFamily="sans-serif"
                 android:inputType="phone"
                 android:textColor="#d04184a3"
-                android:drawableLeft="@drawable/ic_action_phone_start" />
+                android:drawableLeft="@drawable/ic_phone_black_24dp"
+                app:met_floatingLabelText="Full Name"
+                app:met_floatingLabelTextColor="#982360"
+                app:met_minCharacters="6"
+                app:met_maxCharacters="20" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
+                app:met_baseColor="#0056d3"
+                app:met_primaryColor="#982360"
+                app:met_errorColor="#ddaa00"
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,11 +118,18 @@
                 android:textColor="#d04184a3"
                 android:hint="Password"
                 android:layout_marginTop="320dp"
-                android:drawableLeft="@drawable/ic_action_key"/>
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                app:met_floatingLabelText="Full Name"
+                app:met_floatingLabelTextColor="#982360"
+                app:met_minCharacters="6"
+                app:met_maxCharacters="20"/>
 
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
+                app:met_baseColor="#0056d3"
+                app:met_primaryColor="#982360"
+                app:met_errorColor="#ddaa00"
                 android:id="@+id/confirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -110,7 +141,11 @@
                 android:fontFamily="sans-serif"
                 android:inputType="text|textPassword"
                 android:textColor="#d04184a3"
-                android:drawableLeft="@drawable/ic_action_key" />
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                app:met_floatingLabelText="Full Name"
+                app:met_floatingLabelTextColor="#982360"
+                app:met_minCharacters="6"
+                app:met_maxCharacters="20"/>
 
 
         <Button

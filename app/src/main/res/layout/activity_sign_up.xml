@@ -21,7 +21,7 @@
         <com.rengwuxian.materialedittext.MaterialEditText
                 app:met_baseColor="#0056d3"
                 app:met_primaryColor="#982360"
-                app:met_errorColor="#ddaa00"
+                app:met_errorColor="@color/errorColor"
                 android:id="@+id/fullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,16 +34,19 @@
                 android:inputType="textPersonName|textCapWords"
                 android:textColor="#d04184a3"
                 android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
-                app:met_floatingLabel="normal"
+                app:met_floatingLabelText="Full Name"
                 app:met_floatingLabelTextColor="#982360"
                 app:met_minCharacters="3"
-                app:met_maxCharacters="20"/>
+                app:met_maxCharacters="20"
+                app:met_helperText="Mainak Dutta"
+                app:met_helperTextColor="@color/hintColor"
+                 />
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
                 app:met_baseColor="#0056d3"
                 app:met_primaryColor="#982360"
-                app:met_errorColor="#ddaa00"
+                app:met_errorColor="@color/errorColor"
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,15 +59,17 @@
                 android:inputType="textEmailAddress"
                 android:textColor="#d04184a3"
                 android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
-                app:met_floatingLabel="normal"
+                app:met_floatingLabelText="Username"
                 app:met_floatingLabelTextColor="#982360"
                 app:met_minCharacters="3"
-                app:met_maxCharacters="20"/>
+                app:met_maxCharacters="20"
+                app:met_helperText="Mak123"
+                app:met_helperTextColor="@color/hintColor" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 app:met_baseColor="#0056d3"
                 app:met_primaryColor="#982360"
-                app:met_errorColor="#ddaa00"
+                app:met_errorColor="@color/errorColor"
                 android:id="@+id/Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,15 +82,17 @@
                 android:inputType="textEmailAddress|textAutoComplete"
                 android:textColor="#d04184a3"
                 android:drawableLeft="@drawable/ic_email_black_24dp"
-                app:met_floatingLabel="normal"
+                app:met_floatingLabelText="Email"
                 app:met_floatingLabelTextColor="#982360"
                 app:met_minCharacters="6"
-                app:met_maxCharacters="20" />
+                app:met_maxCharacters="20"
+                app:met_helperText="mainak.duttz@abc.com"
+                app:met_helperTextColor="@color/hintColor"/>
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 app:met_baseColor="#0056d3"
                 app:met_primaryColor="#982360"
-                app:met_errorColor="#ddaa00"
+                app:met_errorColor="@color/errorColor"
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -98,15 +105,17 @@
                 android:inputType="phone"
                 android:textColor="#d04184a3"
                 android:drawableLeft="@drawable/ic_phone_black_24dp"
-                app:met_floatingLabel="normal"
+                app:met_floatingLabelText="Phone"
                 app:met_floatingLabelTextColor="#982360"
                 app:met_minCharacters="6"
-                app:met_maxCharacters="20" />
+                app:met_maxCharacters="20"
+                app:met_helperText="+91-1234567890"
+                app:met_helperTextColor="@color/hintColor"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
                 app:met_baseColor="#0056d3"
                 app:met_primaryColor="#982360"
-                app:met_errorColor="#ddaa00"
+                app:met_errorColor="@color/errorColor"
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,17 +128,19 @@
                 android:hint="Password"
                 android:layout_marginTop="320dp"
                 android:drawableLeft="@drawable/ic_lock_black_24dp"
-                app:met_floatingLabel="normal"
+                app:met_floatingLabelText="Password"
                 app:met_floatingLabelTextColor="#982360"
                 app:met_minCharacters="6"
-                app:met_maxCharacters="20"/>
+                app:met_maxCharacters="20"
+                app:met_helperText="P@ssword!123"
+                app:met_helperTextColor="@color/hintColor"/>
 
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
                 app:met_baseColor="#0056d3"
                 app:met_primaryColor="#982360"
-                app:met_errorColor="#ddaa00"
+                app:met_errorColor="@color/errorColor"
                 android:id="@+id/confirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -142,10 +153,12 @@
                 android:inputType="text|textPassword"
                 android:textColor="#d04184a3"
                 android:drawableLeft="@drawable/ic_lock_black_24dp"
-                app:met_floatingLabel="normal"
+                app:met_floatingLabelText="Confirm Password"
                 app:met_floatingLabelTextColor="#982360"
                 app:met_minCharacters="6"
-                app:met_maxCharacters="20"/>
+                app:met_maxCharacters="20"
+                app:met_helperText="P@ssword!123"
+                app:met_helperTextColor="@color/hintColor"/>
 
 
         <Button

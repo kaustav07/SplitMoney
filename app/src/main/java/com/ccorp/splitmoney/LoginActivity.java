@@ -14,9 +14,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity {
-
+/*
     @BindView(R.id.usernameWrapper)  TextInputLayout usernameWrapper;
-    @BindView(R.id.passwordWrapper)  TextInputLayout passwordWrapper;
+    @BindView(R.id.passwordWrapper)  TextInputLayout passwordWrapper;*/
     @BindView(R.id.username) EditText inputUsername;
     @BindView(R.id.password) EditText inputPassword;
 
@@ -30,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         loginContext = getApplicationContext();
-        usernameWrapper.setHint("UserName");
-        passwordWrapper.setHint("Password");
+       /* usernameWrapper.setHint("UserName");
+        passwordWrapper.setHint("Password");*/
 
         inputUsername.addTextChangedListener(new LoginValidation(inputUsername, this));
         inputPassword.addTextChangedListener(new LoginValidation(inputPassword,this));

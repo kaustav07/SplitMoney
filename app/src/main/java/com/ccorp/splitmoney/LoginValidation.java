@@ -19,8 +19,8 @@ import butterknife.ButterKnife;
 public class LoginValidation implements TextWatcher{
     @BindView(R.id.username) EditText inputUsername;
     @BindView(R.id.password) EditText inputPassword;
-    @BindView(R.id.usernameWrapper) TextInputLayout usernameWrapper;
-    @BindView(R.id.passwordWrapper) TextInputLayout passwordWrapper;
+   /* @BindView(R.id.usernameWrapper) TextInputLayout usernameWrapper;
+    @BindView(R.id.passwordWrapper) TextInputLayout passwordWrapper;*/
 
 
     private View view;
@@ -54,11 +54,9 @@ public class LoginValidation implements TextWatcher{
         String username = inputUsername.getText().toString().trim();
 
         if (username.isEmpty() || !isValidUsername(username)) {
-            usernameWrapper.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
+            inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
             requestFocus(inputUsername);
             return false;
-        } else {
-            usernameWrapper.setErrorEnabled(false);
         }
 
         return true;
@@ -67,13 +65,11 @@ public class LoginValidation implements TextWatcher{
 
     private boolean validatePassword(EditText inputPassword) {
         if (inputPassword.getText().toString().trim().isEmpty()) {
-            passwordWrapper.setError(LoginActivity.getContext().getString(R.string.error_invalid_password));
+            inputPassword.setError(LoginActivity.getContext().getString(R.string.error_invalid_password));
             requestFocus(inputPassword);
             return false;
         }
-        else {
-            passwordWrapper.setErrorEnabled(false);
-        }
+
 
         return true;
     }

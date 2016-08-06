@@ -94,7 +94,8 @@ public class SignUpValidation implements TextWatcher{
 
         if (username.isEmpty() || !isValidUsername(username)) {
             inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
-            requestFocus(inputUsername);
+            inputUsername.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
+            //requestFocus(inputUsername);
             return false;
         }
 
@@ -105,8 +106,9 @@ public class SignUpValidation implements TextWatcher{
         String email = inputEmail.getText().toString().trim();
 
         if (email.isEmpty() || !isValidEmail(email)) {
-            inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_email));
-            requestFocus(inputEmail);
+            inputEmail.setError(LoginActivity.getContext().getString(R.string.error_invalid_email));
+            inputEmail.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
+            //requestFocus(inputEmail);
             return false;
         }
 
@@ -119,8 +121,8 @@ public class SignUpValidation implements TextWatcher{
         String phone = inputPhone.getText().toString().trim();
 
         if (phone.isEmpty() || !isValidPhone(phone)) {
-            inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_phone));
-            requestFocus(inputPhone);
+            inputPhone.setError(LoginActivity.getContext().getString(R.string.error_invalid_phone));
+            inputPhone.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
             return false;
         }
 
@@ -129,7 +131,8 @@ public class SignUpValidation implements TextWatcher{
     private boolean validatePassword() {
         if (inputPassword.getText().toString().trim().isEmpty()) {
             inputPassword.setError(LoginActivity.getContext().getString(R.string.error_invalid_password));
-            requestFocus(inputPassword);
+            inputPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
+            //requestFocus(inputPassword);
             return false;
         }
 
@@ -142,7 +145,8 @@ public class SignUpValidation implements TextWatcher{
         String confirmPassword = inputConfirmPassword.getText().toString().trim();
         if (inputConfirmPassword.getText().toString().trim().isEmpty()|| (password != confirmPassword)) {
             inputPassword.setError(LoginActivity.getContext().getString(R.string.error_incorrect_confirmPassword));
-            requestFocus(inputConfirmPassword);
+            inputPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
+            //requestFocus(inputConfirmPassword);
             return false;
         }
 

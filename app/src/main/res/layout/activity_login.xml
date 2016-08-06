@@ -44,9 +44,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/SignButton"
+        android:text="@string/SignupButton"
         android:id="@+id/SignButton"
-        android:onClick="SigninButton"
+        android:onClick="SignupButton_click"
         android:background="@drawable/shape"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -59,9 +59,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/SignupButton"
+        android:text="@string/SignButton"
         android:id="@+id/SignoutButton"
-        android:onClick="SignupButton_click"
+        android:onClick="SigninButton"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:background="@drawable/shape"

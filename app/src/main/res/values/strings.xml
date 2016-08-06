@@ -18,6 +18,7 @@
         completions."
     </string>
     <string name="usernameWrapper">Username</string>
+    <string name="errorcolor">#D50000</string>
     <string name="SignButton">Sign In</string>
     <string name="SignupButton">Sign Up</string>
     <string name="validation_name">Please Write Something</string>

@@ -1,10 +1,12 @@
 package com.ccorp.splitmoney;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.design.widget.TextInputLayout;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -74,15 +76,14 @@ public class SignUpValidation implements TextWatcher{
     }
 
     private boolean validateName() {
-        if (inputName.getText().toString().trim().isEmpty()) {
-            inputName.setErrorColor(R.color.errorColor);
+        /*if (inputName.getText().toString().trim().isEmpty()) {
             inputName.setError(LoginActivity.getContext().getString(R.string.error_msg_name));
-            requestFocus(inputName);
-            return false;
-        }
-        else if(inputName.getText().length()<3){
             inputName.setErrorColor(R.color.errorColor);
+            return false;
+        }*/
+        if(inputName.getText().length()<3){
             inputName.setError("Min length should be 3");
+            inputName.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
         }
 
         return true;

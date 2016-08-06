@@ -33,15 +33,13 @@
                 android:hint="Enter Full Name"
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName|textCapWords"
-                android:textColor="#d04184a3"
                 android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
                 app:met_floatingLabelText="Full Name"
                 app:met_floatingLabelTextColor="#982360"
+                app:met_floatingLabel="highlight"
                 app:met_underlineColor="#0056d3"
                 app:met_minCharacters="3"
                 app:met_maxCharacters="20"
-                app:met_validateOnFocusLost="false"
-
                 app:met_helperText="Mainak Dutta"
                 app:met_helperTextColor="@color/hintColor"
                  />

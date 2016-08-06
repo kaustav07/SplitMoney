@@ -9,52 +9,37 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ccorp.splitmoney.LoginActivity"
-    android:background="@color/colorPrimary"
-    >
+    android:background="@color/colorPrimary">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/usernameWrapper"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="142dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
-
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/username"
+        android:hint="UserName"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_centerInParent="true"
         android:fontFamily="sans-serif"
-        android:textColor="#d04184a3"
-        android:drawableLeft="@drawable/ic_perm_identity_black_24dp" />
-        />
-    </android.support.design.widget.TextInputLayout>
+        android:textColor="#d04184a3" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/passwordWrapper"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true">
-    <EditText
+
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/password"
+        android:hint="Password"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_below="@+id/username"
+        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif"
         android:textColor="#d04184a3"
-        android:drawableLeft="@drawable/ic_lock_black_24dp"
         />
-    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:layout_width="wrap_content"
@@ -62,13 +47,14 @@
         android:text="@string/SignButton"
         android:id="@+id/SignButton"
         android:onClick="SigninButton"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="28dp"
         android:background="@drawable/shape"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:textColor="@android:color/white"
         style="@style/Base.TextAppearance.AppCompat.Body2"
-        android:layout_below="@+id/passwordWrapper"
-        android:layout_alignParentStart="true" />
+        android:layout_alignTop="@+id/SignoutButton"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="40dp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -76,10 +62,13 @@
         android:text="@string/SignupButton"
         android:id="@+id/SignoutButton"
         android:onClick="SignupButton_click"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:background="@drawable/shape"
         android:textColor="@android:color/white"
         style="@style/Base.TextAppearance.AppCompat.Body2"
-        android:layout_marginEnd="34dp"
-        android:layout_alignTop="@+id/SignButton"
-        android:layout_alignEnd="@+id/passwordWrapper" />
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/password"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="40dp"/>
 </RelativeLayout>

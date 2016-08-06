@@ -28,7 +28,8 @@
                 android:hint="fullname"
                 android:fontFamily="sans-serif"
                 android:inputType="textPersonName|textCapWords"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_user" />
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -42,7 +43,8 @@
                 android:hint="username"
                 android:fontFamily="sans-serif"
                 android:inputType="textEmailAddress"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_user" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/Email"
@@ -55,7 +57,8 @@
                 android:hint="Email"
                 android:fontFamily="sans-serif"
                 android:inputType="textEmailAddress|textAutoComplete"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_gmail" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/phone"
@@ -68,7 +71,8 @@
                 android:hint="Phone"
                 android:fontFamily="sans-serif"
                 android:inputType="phone"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_phone_start" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/password"
@@ -81,7 +85,8 @@
                 android:inputType="text|textPassword"
                 android:textColor="#d04184a3"
                 android:hint="Password"
-                android:layout_marginTop="320dp" />
+                android:layout_marginTop="320dp"
+                android:drawableLeft="@drawable/ic_action_key"/>
 
 
 
@@ -96,7 +101,8 @@
                 android:hint="Confirm Password"
                 android:fontFamily="sans-serif"
                 android:inputType="text|textPassword"
-                android:textColor="#d04184a3" />
+                android:textColor="#d04184a3"
+                android:drawableLeft="@drawable/ic_action_key" />
 
 
         <Button

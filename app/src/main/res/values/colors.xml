@@ -7,4 +7,10 @@
     <color name="buttonColor">#00E676</color>
     <color name="errorColor">#D50000</color>
     <color name="hintColor">#00E676</color>
+    <color name ="met_basecolor">#0056d3</color>
+    <color name ="met_primaryColor">#0056d3</color>
+    <color name ="met_errorColor">#0056d3</color>
+    <color name ="met_textColor">#0056d3</color>
+    <color name ="met_underlineColor">#0056d3</color>
+    <color name ="met_floatingLabelColor">#982360</color>
 </resources>

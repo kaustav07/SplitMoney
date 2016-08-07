@@ -21,8 +21,7 @@ import butterknife.ButterKnife;
  */
 public class SignUpValidation implements TextWatcher{
 
-    @BindView(R.id.fullName)
-    MaterialEditText inputName;
+    @BindView(R.id.fullName) MaterialEditText inputName;
     @BindView(R.id.username) MaterialEditText inputUsername;
     @BindView(R.id.Email) MaterialEditText inputEmail;
     @BindView(R.id.password) MaterialEditText inputPassword;

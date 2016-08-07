@@ -5,6 +5,7 @@ package com.ccorp.splitmoney;
  */
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.design.widget.TextInputLayout;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -12,13 +13,16 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+
+import com.rengwuxian.materialedittext.MaterialEditText;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
 public class LoginValidation implements TextWatcher{
-    @BindView(R.id.username) EditText inputUsername;
-    @BindView(R.id.password) EditText inputPassword;
+    @BindView(R.id.username) MaterialEditText inputUsername;
+    @BindView(R.id.password) MaterialEditText inputPassword;
    /* @BindView(R.id.usernameWrapper) TextInputLayout usernameWrapper;
     @BindView(R.id.passwordWrapper) TextInputLayout passwordWrapper;*/
 
@@ -41,21 +45,22 @@ public class LoginValidation implements TextWatcher{
     public void afterTextChanged(Editable editable) {
         switch (view.getId()) {
             case R.id.username:
-                validateUsername((EditText)view);
+                validateUsername();
                 break;
             case R.id.password:
-                validatePassword((EditText)view);
+                validatePassword();
                 break;
 
         }
     }
 
-    private boolean validateUsername(EditText inputUsername) {
+    private boolean validateUsername() {
         String username = inputUsername.getText().toString().trim();
 
         if (username.isEmpty() || !isValidUsername(username)) {
             inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
-            requestFocus(inputUsername);
+            inputUsername.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
+            //requestFocus(inputUsername);
             return false;
         }
 
@@ -63,10 +68,11 @@ public class LoginValidation implements TextWatcher{
     }
 
 
-    private boolean validatePassword(EditText inputPassword) {
+    private boolean validatePassword() {
         if (inputPassword.getText().toString().trim().isEmpty()) {
             inputPassword.setError(LoginActivity.getContext().getString(R.string.error_invalid_password));
-            requestFocus(inputPassword);
+            inputPassword.setErrorColor(Color.parseColor("D50000"));
+            //requestFocus(inputPassword);
             return false;
         }
 

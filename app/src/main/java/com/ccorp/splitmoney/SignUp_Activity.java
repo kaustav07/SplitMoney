@@ -13,6 +13,7 @@ import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.EditText;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.rengwuxian.materialedittext.validation.RegexpValidator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

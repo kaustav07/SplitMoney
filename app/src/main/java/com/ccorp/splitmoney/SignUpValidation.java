@@ -10,8 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -128,7 +132,9 @@ public class SignUpValidation implements TextWatcher{
         return true;    }
 
     private boolean validatePassword() {
-        if (inputPassword.getText().toString().trim().isEmpty()) {
+        String password = inputPassword.getText().toString().trim();
+        String confirmPassword = inputConfirmPassword.getText().toString().trim();
+        if (password.isEmpty() || password.length()<6 ) {
             inputPassword.setError(LoginActivity.getContext().getString(R.string.error_invalid_password));
             inputPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
             //requestFocus(inputPassword);
@@ -142,19 +148,24 @@ public class SignUpValidation implements TextWatcher{
     private boolean validateConfirmPassword() {
         String password = inputPassword.getText().toString().trim();
         String confirmPassword = inputConfirmPassword.getText().toString().trim();
-        if (inputConfirmPassword.getText().toString().trim().isEmpty()|| (password != confirmPassword)) {
-            inputPassword.setError(LoginActivity.getContext().getString(R.string.error_incorrect_confirmPassword));
-            inputPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
+        if (inputConfirmPassword.getText().toString().trim().isEmpty()|| inputConfirmPassword.length()<6  || !isPasswordMatching(password,confirmPassword)) {
+            inputConfirmPassword.setError("Error in confirm password");
+            inputConfirmPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
             //requestFocus(inputConfirmPassword);
             return false;
         }
-
-
-        return true;
+        else {
+            return true;
+        }
     }
 
     private static boolean isValidUsername(String username) {
-        return !TextUtils.isEmpty(username) ;
+        if(username.length()<3){
+            return false;
+        }
+
+        else
+            return true;
     }
 
     private static boolean isValidEmail(String email) {
@@ -163,6 +174,19 @@ public class SignUpValidation implements TextWatcher{
 
     private static boolean isValidPhone(String phone) {
         return !TextUtils.isEmpty(phone) && android.util.Patterns.PHONE.matcher(phone).matches();
+    }
+
+    public boolean isPasswordMatching(String password, String confirmPassword) {
+        Pattern pattern = Pattern.compile(password, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(confirmPassword);
+
+        if (!matcher.matches()) {
+            //Toast.makeText(getApplicationContext(),"Confirm password is not matching with password", Toast.LENGTH_LONG).show();
+
+            return false;
+        }
+
+        return true;
     }
 
 

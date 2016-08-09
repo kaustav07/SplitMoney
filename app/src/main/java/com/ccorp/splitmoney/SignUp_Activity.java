@@ -1,6 +1,8 @@
 package com.ccorp.splitmoney;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.rengwuxian.materialedittext.validation.RegexpValidator;
@@ -34,6 +37,7 @@ public class SignUp_Activity extends AppCompatActivity {
     @BindView(R.id.phone) EditText inputPhone;
     @BindView(R.id.confirmPassword) EditText inputConfirmPassword;
     private static Context signupContext;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,8 @@ public class SignUp_Activity extends AppCompatActivity {
         inputPhone.addTextChangedListener(new SignUpValidation(inputPhone,this));
         inputPassword.addTextChangedListener(new SignUpValidation(inputPassword,this));
         inputConfirmPassword.addTextChangedListener(new SignUpValidation(inputConfirmPassword,this));
+        addListenerOnButton();
+
 
     }
 
@@ -67,5 +73,25 @@ public class SignUp_Activity extends AppCompatActivity {
 
 
 
+    public void addListenerOnButton() {
 
+        button = (Button) findViewById(R.id.btn_signup);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.btn_signup:
+                        ToastMessage tm = new ToastMessage();
+                        ToastMessage.showMessage(SignUp_Activity.this, "button pressed");
+
+
+                        break;
+
+                }
+
+            }
+
+        });
+
+    }
 }

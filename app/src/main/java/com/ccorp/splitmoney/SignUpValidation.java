@@ -182,12 +182,16 @@ public class SignUpValidation implements TextWatcher{
 
         if (!matcher.matches()) {
             //Toast.makeText(getApplicationContext(),"Confirm password is not matching with password", Toast.LENGTH_LONG).show();
+            ToastMessage tm = new ToastMessage();
+            tm.showMessage(activity, "Confirm password is not matching with Password!");
 
             return false;
         }
 
         return true;
     }
+
+
 
 
 

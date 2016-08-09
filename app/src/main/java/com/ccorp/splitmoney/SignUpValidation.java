@@ -85,7 +85,7 @@ public class SignUpValidation implements TextWatcher{
             return false;
         }*/
         if(inputName.getText().length()<3){
-            inputName.setError("Min length should be 3");
+            inputName.setError("Min length should be always 3");
             inputName.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
         }
 

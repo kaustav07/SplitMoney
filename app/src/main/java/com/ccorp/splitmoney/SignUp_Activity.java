@@ -81,16 +81,20 @@ public class SignUp_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 switch (view.getId()) {
                     case R.id.btn_signup:
-                        if(SignUpValidation.flag_name==1||SignUpValidation.flag_username==1||SignUpValidation.flag_email==1||SignUpValidation.flag_phone==1||SignUpValidation.flag_password==1||SignUpValidation.flag_confirmPassword==1||SignUpValidation.flag_name==2||SignUpValidation.flag_username==2||SignUpValidation.flag_email==2||SignUpValidation.flag_phone==2||SignUpValidation.flag_password==2||SignUpValidation.flag_confirmPassword==2)
+
+                        if(SignUpValidation.flag_name==true || SignUpValidation.flag_username==true || SignUpValidation.flag_email==true || SignUpValidation.flag_phone==true || SignUpValidation.flag_password==true || SignUpValidation.flag_confirmPassword==true)
                         {
                             ToastMessage tm = new ToastMessage();
-                            ToastMessage.showMessage(SignUp_Activity.this, "Please Fix the input");
+                            tm.showMessage(SignUp_Activity.this, "Please Fix the input");
                         }
 
-                        if(SignUpValidation.flag_name==0&&SignUpValidation.flag_username==0&&SignUpValidation.flag_email==0&&SignUpValidation.flag_phone==0&&SignUpValidation.flag_password==0&&SignUpValidation.flag_confirmPassword==0)
+                        else
                         {
+
                             ToastMessage tm = new ToastMessage();
-                            ToastMessage.showMessage(SignUp_Activity.this, "Hurrah!! You are ready to go...");
+                            tm.showMessage(SignUp_Activity.this, "Hurrah!! You are ready to go...");
+
+
                         }
                         break;
 

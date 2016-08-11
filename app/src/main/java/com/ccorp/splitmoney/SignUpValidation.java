@@ -84,6 +84,14 @@ public class SignUpValidation implements TextWatcher{
             inputName.setErrorColor(R.color.errorColor);
             return false;
         }*/
+        if(inputName.getText().toString().trim().isEmpty())
+        {
+            inputName.setError(" ");
+            inputName.setErrorColor(Color.parseColor("#0056d3"));
+            flag_name=true;
+            //return false;
+
+        }
         if(inputName.getText().length()<3){
             inputName.setError("Min length should be always 3");
             inputName.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
@@ -110,6 +118,14 @@ public class SignUpValidation implements TextWatcher{
 
     public boolean validateUsername() {
         String username = inputUsername.getText().toString().trim();
+        if(username.isEmpty())
+        {
+            inputUsername.setError(" ");
+            inputUsername.setErrorColor(Color.parseColor("#0056d3"));
+            flag_username=true;
+            //return false;
+
+        }
 
         if (!isValidUsername(username)) {
             inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
@@ -138,6 +154,14 @@ public class SignUpValidation implements TextWatcher{
 
     private boolean validateEmail() {
         String email = inputEmail.getText().toString().trim();
+
+        if(email.isEmpty())
+        {
+            inputEmail.setError(" ");
+            inputEmail.setErrorColor(Color.parseColor("#0056d3"));
+            flag_email=true;
+            //return false;
+        }
 
         if (!isValidEmail(email)) {
             inputEmail.setError(LoginActivity.getContext().getString(R.string.error_invalid_email));
@@ -168,6 +192,14 @@ public class SignUpValidation implements TextWatcher{
     private boolean validatePhone() {
         String phone = inputPhone.getText().toString().trim();
 
+        if(phone.isEmpty())
+        {
+            inputPhone.setError(" ");
+            inputPhone.setErrorColor(Color.parseColor("#0056d3"));
+            flag_phone=true;
+            // return false;
+        }
+
         if (!isValidPhone(phone)) {
             inputPhone.setError(LoginActivity.getContext().getString(R.string.error_invalid_phone));
             inputPhone.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
@@ -192,6 +224,14 @@ public class SignUpValidation implements TextWatcher{
     private boolean validatePassword() {
         String password = inputPassword.getText().toString().trim();
         String confirmPassword = inputConfirmPassword.getText().toString().trim();
+
+        if(password.isEmpty())
+        {
+            inputPassword.setError(" ");
+            inputPassword.setErrorColor(Color.parseColor("#0056d3"));
+            flag_password=true;
+            //return false;
+        }
         if (password.length()<6 ) {
             inputPassword.setError(LoginActivity.getContext().getString(R.string.error_invalid_password));
             inputPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
@@ -220,6 +260,14 @@ public class SignUpValidation implements TextWatcher{
     private boolean validateConfirmPassword() {
         String password = inputPassword.getText().toString().trim();
         String confirmPassword = inputConfirmPassword.getText().toString().trim();
+
+        if(confirmPassword.isEmpty())
+        {
+            inputConfirmPassword.setError(" ");
+            inputConfirmPassword.setErrorColor(Color.parseColor("#0056d3"));
+            flag_confirmPassword=true;
+            //return false;
+        }
         if (inputConfirmPassword.length()<6  || !isPasswordMatching(password,confirmPassword)) {
             inputConfirmPassword.setError("Error in confirm password");
             inputConfirmPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));

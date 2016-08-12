@@ -86,8 +86,8 @@ public class SignUpValidation implements TextWatcher{
         }*/
         if(inputName.getText().toString().trim().isEmpty())
         {
-            inputName.setError(" ");
-            inputName.setErrorColor(Color.parseColor("#0056d3"));
+            inputName.setError(null);
+//            inputName.setErrorColor(Color.parseColor("#0056d3"));
             flag_name=false;
             //return false;
 
@@ -95,14 +95,14 @@ public class SignUpValidation implements TextWatcher{
         if(inputName.getText().length()<3){
             inputName.setError("Min length should be always 3");
             inputName.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
-            flag_name=true;
+            flag_name=false;
 
         }
 
-        if(inputName.getText().toString().trim().isEmpty())
+        if(inputName.getText().length()>=3)
         {
-            inputName.setError(" ");
-            inputName.setErrorColor(Color.parseColor("#0056d3"));
+            inputName.setError(null);
+            //inputName.setErrorColor(Color.parseColor("#0056d3"));
             flag_name=true;
             //return false;
 

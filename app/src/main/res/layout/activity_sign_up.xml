@@ -177,7 +177,7 @@
             android:layout_below="@+id/confirmPassword"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="51dp"
-            android:onClick="btnOnClick"/>
+            android:onClick="btnSignUp_Click"/>
 
     </RelativeLayout>
 </ScrollView>

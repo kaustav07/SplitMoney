@@ -88,7 +88,7 @@ public class SignUpValidation implements TextWatcher{
         {
             inputName.setError(" ");
             inputName.setErrorColor(Color.parseColor("#0056d3"));
-            flag_name=true;
+            flag_name=false;
             //return false;
 
         }
@@ -108,10 +108,10 @@ public class SignUpValidation implements TextWatcher{
 
         }
 
-        if(!(inputName.getText().length()<3)&& !(inputName.getText().toString().trim().isEmpty()))
+      /*  if(!(inputName.getText().length()<3)&& !(inputName.getText().toString().trim().isEmpty()))
         {
             flag_name=false;
-        }
+        }*/
 
         return flag_name;
     }

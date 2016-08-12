@@ -15,6 +15,7 @@ import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.rengwuxian.materialedittext.validation.RegexpValidator;
 
@@ -30,12 +31,20 @@ public class SignUp_Activity extends AppCompatActivity {
     @BindView(R.id.phoneWrapper) TextInputLayout phoneWrapper;
     @BindView(R.id.passwordWrapper) TextInputLayout passwordWrapper;*/
 /*    @BindView(R.id.confirmPasswordWrapper) TextInputLayout confirmPasswordWrapper;*/
-    @BindView(R.id.fullName) EditText inputName;
-    @BindView(R.id.username) EditText inputUsername;
-    @BindView(R.id.Email) EditText inputEmail;
-    @BindView(R.id.password) EditText inputPassword;
-    @BindView(R.id.phone) EditText inputPhone;
-    @BindView(R.id.confirmPassword) EditText inputConfirmPassword;
+    @BindView(R.id.fullName)
+    EditText inputName;
+    @BindView(R.id.username)
+    EditText inputUsername;
+    @BindView(R.id.Email)
+    EditText inputEmail;
+    @BindView(R.id.password)
+    EditText inputPassword;
+    @BindView(R.id.phone)
+    EditText inputPhone;
+    @BindView(R.id.confirmPassword)
+    EditText inputConfirmPassword;
+    @BindView(R.id.btn_signup)
+    Button signUpButton;
     private static Context signupContext;
     Button button;
 
@@ -51,14 +60,13 @@ public class SignUp_Activity extends AppCompatActivity {
         emailWrapper.setHint("Email");
         phoneWrapper.setHint("Mobile No");
         passwordWrapper.setHint("Password");*/
-       // confirmPasswordWrapper.setHint("Confirm Password");
-        inputName.addTextChangedListener(new SignUpValidation(inputName,this));
-        inputUsername.addTextChangedListener(new SignUpValidation(inputUsername,this));
-        inputEmail.addTextChangedListener(new SignUpValidation(inputEmail,this));
-        inputPhone.addTextChangedListener(new SignUpValidation(inputPhone,this));
-        inputPassword.addTextChangedListener(new SignUpValidation(inputPassword,this));
-        inputConfirmPassword.addTextChangedListener(new SignUpValidation(inputConfirmPassword,this));
-        addListenerOnButton();
+        // confirmPasswordWrapper.setHint("Confirm Password");
+        inputName.addTextChangedListener(new SignUpValidation(inputName, this));
+        inputUsername.addTextChangedListener(new SignUpValidation(inputUsername, this));
+        inputEmail.addTextChangedListener(new SignUpValidation(inputEmail, this));
+        inputPhone.addTextChangedListener(new SignUpValidation(inputPhone, this));
+        inputPassword.addTextChangedListener(new SignUpValidation(inputPassword, this));
+        inputConfirmPassword.addTextChangedListener(new SignUpValidation(inputConfirmPassword, this));
 
 
     }
@@ -67,42 +75,19 @@ public class SignUp_Activity extends AppCompatActivity {
         Transition fade = TransitionInflater.from(this).inflateTransition(R.transition.fade_in);
         getWindow().setEnterTransition(fade);
     }
+
     public static Context getContext() {
         return signupContext;
     }
 
 
-
-    public void addListenerOnButton() {
-
-        button = (Button) findViewById(R.id.btn_signup);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (view.getId()) {
-                    case R.id.btn_signup:
-
-                        if(SignUpValidation.flag_name==true || SignUpValidation.flag_username==true || SignUpValidation.flag_email==true || SignUpValidation.flag_phone==true || SignUpValidation.flag_password==true || SignUpValidation.flag_confirmPassword==true)
-                        {
-                            ToastMessage tm = new ToastMessage();
-                            tm.showMessage(SignUp_Activity.this, "Please Fix the input");
-                        }
-
-                        else
-                        {
-
-                            ToastMessage tm = new ToastMessage();
-                            tm.showMessage(SignUp_Activity.this, "Hurrah!! You are ready to go...");
+    public void btnSignUp_Click(View v) {
+        if (!SignUpValidation.flag_name||!SignUpValidation.flag_username||!SignUpValidation.flag_email||!SignUpValidation.flag_phone||!SignUpValidation.flag_password||!SignUpValidation.flag_confirmPassword) {
+            ToastMessage.showMessage(this, "Please Fix the input");
+        } else {
+            ToastMessage.showMessage(SignUp_Activity.this, "Hurrah!! You are ready to go...");
 
 
-                        }
-                        break;
-
-                }
-
-            }
-
-        });
-
+        }
     }
 }

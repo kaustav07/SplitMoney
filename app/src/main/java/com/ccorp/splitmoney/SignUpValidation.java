@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class SignUpValidation implements TextWatcher{
     @BindView(R.id.password) MaterialEditText inputPassword;
     @BindView(R.id.phone) MaterialEditText inputPhone;
     @BindView(R.id.confirmPassword) MaterialEditText inputConfirmPassword;
+    @BindView(R.id.btn_signup) Button inputButton;
    /* @BindView(R.id.fullNameWrapper) TextInputLayout fullNameWrapper;*/
 //    @BindView(R.id.usernameWrapper) TextInputLayout usernameWrapper;
    /* @BindView(R.id.emailWrapper) TextInputLayout emailWrapper;
@@ -76,6 +78,9 @@ public class SignUpValidation implements TextWatcher{
                 break;
 
         }
+
+
+        enableSubmitIfReady();
     }
 
     private boolean validateName() {
@@ -86,8 +91,8 @@ public class SignUpValidation implements TextWatcher{
         }*/
         if(inputName.getText().toString().trim().isEmpty())
         {
-            inputName.setError(null);
-//            inputName.setErrorColor(Color.parseColor("#0056d3"));
+            inputName.setError(" ");
+            inputName.setErrorColor(Color.parseColor("#0056d3"));
             flag_name=false;
             //return false;
 
@@ -113,6 +118,7 @@ public class SignUpValidation implements TextWatcher{
             flag_name=false;
         }*/
 
+
         return flag_name;
     }
 
@@ -122,32 +128,28 @@ public class SignUpValidation implements TextWatcher{
         {
             inputUsername.setError(" ");
             inputUsername.setErrorColor(Color.parseColor("#0056d3"));
-            flag_username=true;
+            flag_username=false;
             //return false;
 
         }
 
         if (!isValidUsername(username)) {
-            inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
+            inputUsername.setError(SignUp_Activity.getContext().getString(R.string.error_invalid_username));
             inputUsername.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
-            flag_username = true;
+            flag_username = false;
             //requestFocus(inputUsername);
 
         }
 
-        if(username.isEmpty())
+
+
+        if(isValidUsername(username))
         {
-            inputUsername.setError(" ");
-            inputUsername.setErrorColor(Color.parseColor("#0056d3"));
+            inputUsername.setError(null);
             flag_username=true;
-            //return false;
-
         }
 
-        if(isValidUsername(username) && !(username.isEmpty()))
-        {
-            flag_username=false;
-        }
+
 
         return flag_username;
     }
@@ -159,30 +161,25 @@ public class SignUpValidation implements TextWatcher{
         {
             inputEmail.setError(" ");
             inputEmail.setErrorColor(Color.parseColor("#0056d3"));
-            flag_email=true;
+            flag_email=false;
             //return false;
         }
 
         if (!isValidEmail(email)) {
-            inputEmail.setError(LoginActivity.getContext().getString(R.string.error_invalid_email));
+            inputEmail.setError(SignUp_Activity.getContext().getString(R.string.error_invalid_email));
             inputEmail.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
             //requestFocus(inputEmail);
-            flag_email=true;
+            flag_email=false;
 
-        }
-
-        if(email.isEmpty())
-        {
-            inputEmail.setError(" ");
-            inputEmail.setErrorColor(Color.parseColor("#0056d3"));
-            flag_email=true;
-            //return false;
         }
 
         if(isValidEmail(email))
         {
-            flag_email=false;
+            inputEmail.setError(null);
+            flag_email=true;
         }
+
+
 
         return flag_email;    }
 
@@ -196,28 +193,25 @@ public class SignUpValidation implements TextWatcher{
         {
             inputPhone.setError(" ");
             inputPhone.setErrorColor(Color.parseColor("#0056d3"));
-            flag_phone=true;
+            flag_phone=false;
             // return false;
         }
 
         if (!isValidPhone(phone)) {
-            inputPhone.setError(LoginActivity.getContext().getString(R.string.error_invalid_phone));
+            inputPhone.setError(SignUp_Activity.getContext().getString(R.string.error_invalid_phone));
             inputPhone.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
-            flag_phone=true;
+            flag_phone=false;
 
         }
 
-        if(phone.isEmpty())
-        {
-            inputPhone.setError(" ");
-            inputPhone.setErrorColor(Color.parseColor("#0056d3"));
-            flag_phone=true;
-           // return false;
-        }
+
         if(isValidPhone(phone))
         {
-            flag_phone=false;
+            inputPhone.setError(null);
+            flag_phone=true;
         }
+
+
 
         return flag_phone;    }
 
@@ -229,29 +223,26 @@ public class SignUpValidation implements TextWatcher{
         {
             inputPassword.setError(" ");
             inputPassword.setErrorColor(Color.parseColor("#0056d3"));
-            flag_password=true;
+            flag_password=false;
             //return false;
         }
         if (password.length()<6 ) {
-            inputPassword.setError(LoginActivity.getContext().getString(R.string.error_invalid_password));
+            inputPassword.setError(SignUp_Activity.getContext().getString(R.string.error_invalid_password));
             inputPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
             //requestFocus(inputPassword);
-            flag_password=true;
-
-        }
-
-        if(password.isEmpty())
-        {
-            inputPassword.setError(" ");
-            inputPassword.setErrorColor(Color.parseColor("#0056d3"));
-            flag_password=true;
-            //return false;
-        }
-
-        if(!(password.length()<6) && !(password.isEmpty()))
-        {
             flag_password=false;
+
         }
+
+
+
+        if(password.length()>=6)
+        {
+            inputPassword.setError(null);
+            flag_password=true;
+        }
+
+
 
 
         return flag_password;
@@ -265,31 +256,42 @@ public class SignUpValidation implements TextWatcher{
         {
             inputConfirmPassword.setError(" ");
             inputConfirmPassword.setErrorColor(Color.parseColor("#0056d3"));
-            flag_confirmPassword=true;
+            flag_confirmPassword=false;
             //return false;
         }
         if (inputConfirmPassword.length()<6  || !isPasswordMatching(password,confirmPassword)) {
             inputConfirmPassword.setError("Error in confirm password");
             inputConfirmPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
-            flag_confirmPassword=true;
+            flag_confirmPassword=false;
             //requestFocus(inputConfirmPassword);
 
             }
-        if(confirmPassword.isEmpty())
+
+        if((inputConfirmPassword.length()>=6) && isPasswordMatching(password,confirmPassword))
         {
-            inputConfirmPassword.setError(" ");
-            inputConfirmPassword.setErrorColor(Color.parseColor("#0056d3"));
+            inputConfirmPassword.setError(null);
             flag_confirmPassword=true;
-            //return false;
         }
 
-        if(!(inputConfirmPassword.length()<6) && isPasswordMatching(password,confirmPassword) && !(confirmPassword.isEmpty()))
-        {
-            flag_confirmPassword=false;
-        }
+
 
 
             return flag_confirmPassword;
+
+    }
+
+    public void enableSubmitIfReady() {
+
+        if (!SignUpValidation.flag_name||!SignUpValidation.flag_username||!SignUpValidation.flag_email||!SignUpValidation.flag_phone||!SignUpValidation.flag_password||!SignUpValidation.flag_confirmPassword) {
+            inputButton.setEnabled(false);
+
+        }
+
+        if(SignUpValidation.flag_name && SignUpValidation.flag_username && SignUpValidation.flag_email && SignUpValidation.flag_phone && SignUpValidation.flag_password && SignUpValidation.flag_confirmPassword) {
+            inputButton.setEnabled(true);
+
+        }
+
 
     }
 

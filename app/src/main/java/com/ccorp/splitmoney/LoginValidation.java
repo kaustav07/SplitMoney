@@ -25,7 +25,7 @@ public class LoginValidation implements TextWatcher{
     @BindView(R.id.password) MaterialEditText inputPassword;
    /* @BindView(R.id.usernameWrapper) TextInputLayout usernameWrapper;
     @BindView(R.id.passwordWrapper) TextInputLayout passwordWrapper;*/
-
+    static boolean flag_Login_username=false, flag_Login_Password=false;
 
     private View view;
     Activity activity;
@@ -57,27 +57,27 @@ public class LoginValidation implements TextWatcher{
     private boolean validateUsername() {
         String username = inputUsername.getText().toString().trim();
 
-        if (username.isEmpty() || !isValidUsername(username)) {
-            inputUsername.setError(LoginActivity.getContext().getString(R.string.error_invalid_username));
-            inputUsername.setErrorColor(Color.parseColor(this.activity.getString(R.string.errorcolor)));
+        if (username.isEmpty()) {
+            inputUsername.setError(" ");
+            inputUsername.setErrorColor(Color.parseColor(this.activity.getString(R.string.basecolor)));
             //requestFocus(inputUsername);
-            return false;
+            flag_Login_Password=false;
         }
 
-        return true;
+        return flag_Login_username;
     }
 
 
     private boolean validatePassword() {
         if (inputPassword.getText().toString().trim().isEmpty()) {
-            inputPassword.setError(LoginActivity.getContext().getString(R.string.error_invalid_password));
-            inputPassword.setErrorColor(Color.parseColor("D50000"));
+            inputPassword.setError(" ");
+            inputPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.basecolor)));
             //requestFocus(inputPassword);
-            return false;
+            flag_Login_Password=false;
         }
 
 
-        return true;
+        return flag_Login_Password;
     }
 
     private static boolean isValidUsername(String username) {

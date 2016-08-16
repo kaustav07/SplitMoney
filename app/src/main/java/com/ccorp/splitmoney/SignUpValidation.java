@@ -100,7 +100,7 @@ public class SignUpValidation implements TextWatcher{
         if(inputName.getText().toString().trim().isEmpty())
         {
             inputName.setError(" ");
-            inputName.setErrorColor(Color.parseColor("#0056d3"));
+            inputName.setErrorColor(Color.parseColor(this.activity.getString(R.string.basecolor)));
             flag_name=false;
             //return false;
 
@@ -138,7 +138,7 @@ public class SignUpValidation implements TextWatcher{
         if(username.isEmpty())
         {
             inputUsername.setError(" ");
-            inputUsername.setErrorColor(Color.parseColor("#0056d3"));
+            inputUsername.setErrorColor(Color.parseColor(this.activity.getString(R.string.basecolor)));
             flag_username=false;
             //return false;
 
@@ -171,7 +171,7 @@ public class SignUpValidation implements TextWatcher{
         if(email.isEmpty())
         {
             inputEmail.setError(" ");
-            inputEmail.setErrorColor(Color.parseColor("#0056d3"));
+            inputEmail.setErrorColor(Color.parseColor(this.activity.getString(R.string.basecolor)));
             flag_email=false;
             //return false;
         }
@@ -202,7 +202,7 @@ public class SignUpValidation implements TextWatcher{
         if(phone.isEmpty())
         {
             inputPhone.setError(" ");
-            inputPhone.setErrorColor(Color.parseColor("#0056d3"));
+            inputPhone.setErrorColor(Color.parseColor(this.activity.getString(R.string.basecolor)));
             flag_phone=false;
             // return false;
         }
@@ -232,7 +232,7 @@ public class SignUpValidation implements TextWatcher{
         if(password.isEmpty())
         {
             inputPassword.setError(" ");
-            inputPassword.setErrorColor(Color.parseColor("#0056d3"));
+            inputPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.basecolor)));
             flag_password=false;
             //return false;
         }
@@ -266,7 +266,7 @@ public class SignUpValidation implements TextWatcher{
         if(confirmPassword.isEmpty())
         {
             inputConfirmPassword.setError(" ");
-            inputConfirmPassword.setErrorColor(Color.parseColor("#0056d3"));
+            inputConfirmPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.basecolor)));
             flag_confirmPassword=false;
             //return false;
         }

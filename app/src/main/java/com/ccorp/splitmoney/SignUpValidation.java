@@ -341,11 +341,6 @@ public class SignUpValidation implements TextWatcher{
         }
     }
 
-    private void justCheck()
-    {
-
-    }
-
 
 
 

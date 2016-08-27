@@ -86,11 +86,11 @@ public class SignUp_Activity extends AppCompatActivity {
 
     public void btnSignUp_Click(View v) {
 
-        if (!SignUpValidation.flag_fullName ||!SignUpValidation.flag_username||!SignUpValidation.flag_email||!SignUpValidation.flag_phone||!SignUpValidation.flag_password||!SignUpValidation.flag_confirmPassword) {
+        if (!SignUpValidation.flag_name ||!SignUpValidation.flag_username||!SignUpValidation.flag_email||!SignUpValidation.flag_phone||!SignUpValidation.flag_password||!SignUpValidation.flag_confirmPassword) {
             ToastMessage.showMessage(this, "Please Fix the input");
 
         }
-        if(SignUpValidation.flag_fullName && SignUpValidation.flag_username && SignUpValidation.flag_email && SignUpValidation.flag_phone && SignUpValidation.flag_password && SignUpValidation.flag_confirmPassword) {
+        if(SignUpValidation.flag_name && SignUpValidation.flag_username && SignUpValidation.flag_email && SignUpValidation.flag_phone && SignUpValidation.flag_password && SignUpValidation.flag_confirmPassword) {
 
 //            ToastMessage.showMessage(SignUp_Activity.this, "Hurrah!! You are ready to go...");
             String fullname,username,email,phone,password = null;

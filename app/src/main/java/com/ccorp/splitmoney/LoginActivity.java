@@ -58,17 +58,17 @@ public class LoginActivity extends AppCompatActivity {
 
     public void SigninButton(View v) {
 
-        DbOperations dbOperations = new DbOperations(getApplicationContext());
+        DbOperations dbOperations = new DbOperations(this);
         EditText username = (EditText) findViewById(R.id.username);
         EditText password = (EditText) findViewById(R.id.password);
-        int isValid = dbOperations.isValidUser(username.getText().toString(), password.getText().toString());
-        if (isValid == -1)
+        dbOperations.isValidUser(username.getText().toString(), password.getText().toString());
+        /*if (isValid == -1)
             Toast.makeText(getApplicationContext(), "Some Database error", Toast.LENGTH_LONG).show();
         if (isValid == 1) {
             Toast.makeText(getApplicationContext(), "It is a valid user", Toast.LENGTH_LONG).show();
         } else
             Toast.makeText(getApplicationContext(), "It is not a valid user", Toast.LENGTH_LONG).show();
-
+*/
 
     }
 }

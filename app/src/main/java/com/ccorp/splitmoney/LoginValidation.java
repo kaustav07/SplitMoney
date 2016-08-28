@@ -60,7 +60,7 @@ public class LoginValidation implements TextWatcher{
         if (username.isEmpty()) {
             inputUsername.setError(" ");
             inputUsername.setErrorColor(Color.parseColor(this.activity.getString(R.string.basecolor)));
-            //requestFocus(inputUsername);
+            //requestFocus(username);
             flag_Login_Password=false;
         }
 
@@ -72,7 +72,7 @@ public class LoginValidation implements TextWatcher{
         if (inputPassword.getText().toString().trim().isEmpty()) {
             inputPassword.setError(" ");
             inputPassword.setErrorColor(Color.parseColor(this.activity.getString(R.string.basecolor)));
-            //requestFocus(inputPassword);
+            //requestFocus(password);
             flag_Login_Password=false;
         }
 

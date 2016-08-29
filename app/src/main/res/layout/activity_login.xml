@@ -37,7 +37,7 @@
             app:met_errorColor="@color/met_errorColor"
             app:met_floatingLabelText="Confirm Password"
             app:met_floatingLabelTextColor="@color/met_floatingLabelColor"
-            app:met_helperText="P@ssword!123"
+            app:met_helperText="Username"
             app:met_helperTextColor="@color/hintColor"
             app:met_maxCharacters="20"
             app:met_minCharacters="6"
@@ -62,7 +62,7 @@
             app:met_errorColor="@color/met_errorColor"
             app:met_floatingLabelText="Confirm Password"
             app:met_floatingLabelTextColor="@color/met_floatingLabelColor"
-            app:met_helperText="P@ssword!123"
+            app:met_helperText="Password"
             app:met_helperTextColor="@color/hintColor"
             app:met_maxCharacters="20"
             app:met_minCharacters="6"
@@ -93,10 +93,21 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/shape"
-            android:onClick="SigninButton"
+            android:onClick="SigninButton_click"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/SignButton"
             android:textColor="@android:color/white" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar2"
+            android:progressDrawable="@drawable/circular_progress_view"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+
     </RelativeLayout>
 </ScrollView>

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.passwordWrapper)  TextInputLayout passwordWrapper;*/
     @BindView(R.id.username) EditText inputUsername;
     @BindView(R.id.password) EditText inputPassword;
+    @BindView(R.id.progressBar2) ProgressBar myProgressBar2;
 
     private static Context loginContext;
     ImageView imageview;
@@ -35,6 +37,9 @@ public class LoginActivity extends AppCompatActivity {
 
         inputUsername.addTextChangedListener(new LoginValidation(inputUsername, this));
         inputPassword.addTextChangedListener(new LoginValidation(inputPassword,this));
+        myProgressBar2.setVisibility(View.GONE);
+
+
 
 
     }
@@ -56,12 +61,14 @@ public class LoginActivity extends AppCompatActivity {
         }*/
     }
 
-    public void SigninButton(View v) {
+    public void SigninButton_click(View v) {
 
+        myProgressBar2.setVisibility(View.VISIBLE);
         DbOperations dbOperations = new DbOperations(this);
         EditText username = (EditText) findViewById(R.id.username);
         EditText password = (EditText) findViewById(R.id.password);
         dbOperations.isValidUser(username.getText().toString(), password.getText().toString());
+        myProgressBar2.setVisibility(View.GONE);
         /*if (isValid == -1)
             Toast.makeText(getApplicationContext(), "Some Database error", Toast.LENGTH_LONG).show();
         if (isValid == 1) {

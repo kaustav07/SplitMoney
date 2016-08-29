@@ -11,6 +11,7 @@ import android.transition.TransitionInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -49,8 +50,11 @@ public class SignUp_Activity extends AppCompatActivity {
     EditText confirmPassword;
     @BindView(R.id.btn_signup)
     Button signUpButton;
+    @BindView(R.id.progressBar)
+    ProgressBar myProgressBar;
     private static Context signupContext;
     Button button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +75,7 @@ public class SignUp_Activity extends AppCompatActivity {
         phone.addTextChangedListener(new SignUpValidation(phone, this));
         password.addTextChangedListener(new SignUpValidation(password, this));
         confirmPassword.addTextChangedListener(new SignUpValidation(confirmPassword, this));
+        myProgressBar.setVisibility(View.GONE);
 
 
     }
@@ -93,6 +98,7 @@ public class SignUp_Activity extends AppCompatActivity {
         if(SignUpValidation.flag_fullName && SignUpValidation.flag_username && SignUpValidation.flag_email && SignUpValidation.flag_phone && SignUpValidation.flag_password && SignUpValidation.flag_confirmPassword) {
 
 //            ToastMessage.showMessage(SignUp_Activity.this, "Hurrah!! You are ready to go...");
+            myProgressBar.setVisibility(View.VISIBLE);
             String fullname,username,email,phone,password = null;
             fullname = fullName.getText().toString();
             username = this.username.getText().toString();
@@ -106,6 +112,7 @@ public class SignUp_Activity extends AppCompatActivity {
 
             DbOperations db = new DbOperations(this);
             db.inserToDB(fullname,username,email,phone,password);
+            myProgressBar.setVisibility(View.GONE);
         }
     }
 
